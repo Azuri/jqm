@@ -14,11 +14,17 @@
 		<div data-role="main" class="ui-content">
 
 			<div>
-				<select data-native-menu="false" data-inline="true" multiple="multiple" id="select">
-					<option value="1">One</option>
-					<option value="2" selected="selected">Two</option>
-					<option value="3">Three</option>
-					<option value="4">Very logn option</option>
+				<select data-native-menu="false" data-inline="true" id="select">
+					<option>fade</option>
+					<option>flip</option>
+					<option>flow</option>
+					<option>pop</option>
+					<option>slide</option>
+					<option>slidefade</option>
+					<option>slideup</option>
+					<option>slidewown</option>
+					<option>turn</option>
+					<option>none</option>
 				</select>
 			</div>
 
@@ -46,7 +52,19 @@
 	</div>
 
 <script>
+	$(function(){
 
+		$('[href=#page2]').on('click', function(e){
+			var effect = $('#select').val();
+
+			$.mobile.navigate('#page2', {
+				transition : effect
+			});
+
+			e.preventDefault();
+		});
+
+	});
 </script>
 </body>
 </html>
